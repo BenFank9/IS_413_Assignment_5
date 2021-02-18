@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewBag.h1 = "Welcome to My Bookstore";
+}
+
+@model IQueryable<Books>
+
+
+@*Make a table for the prepopulated list entered*@
+<div class="container">
+    <table id="customers">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author First</th>
+                <th>Author Last</th>
+                <th>Publisher</th>
+                <th>ISBN</th>
+                <th>Category</th>
+                <th>Classification</th>
+                <th>Price</th>
+
+            </tr>
+        </thead>
+
+        @*Use razor code to make bring in the new movies from the model.
+            Also use a foreach to loop through all of the restaurants in the list and print them in a table*@
+        <tbody>
+            @foreach ( var r in Model)
+            {
+            <tr>
+                <td>@r.Title</td>
+                <td>@r.AuthorFirst</td>
+                <td>@r.AuthorLast</td>
+                <td>@r.Publisher</td>
+                <td>@r.ISBN</td>
+                <td>@r.Category</td>
+                <td>@r.Classification</td>
+                <td><a>$</a>@r.Price</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<div class="container">
+    <img class="center rounded" src="~/img/jeff.jpg" />
+</div>
+
