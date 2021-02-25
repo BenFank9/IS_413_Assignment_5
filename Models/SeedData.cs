@@ -34,7 +34,8 @@ namespace IS_413_Assignment_5.Models
                         ISBN = "978-0451419439",
                         Category = "Fiction",
                         Classification = "Classic",
-                        Price = 9.95
+                        Price = 9.95,
+                        Pages = 1488
                     },
 
                      new Books
@@ -47,7 +48,8 @@ namespace IS_413_Assignment_5.Models
                          ISBN = "978-0743270755",
                          Category = "Non-Fiction",
                          Classification = "Biography",
-                         Price = 14.58
+                         Price = 14.58,
+                         Pages = 944
                      },
 
                      new Books
@@ -60,7 +62,9 @@ namespace IS_413_Assignment_5.Models
                          ISBN = "978-0553393613",
                          Category = "Fiction",
                          Classification = "Thrillers",
-                         Price = 15.03
+                         Price = 15.03,
+                         Pages = 642
+
                      },
 
                      new Books
@@ -73,10 +77,98 @@ namespace IS_413_Assignment_5.Models
                          ISBN = "978-0812974492",
                          Category = "Non-Fiction",
                          Classification = "Historical",
-                         Price = 13.33
-                     }
+                         Price = 13.33,
+                         Pages = 528
+                     },
+                     
+                    
+                      new Books
+                      {
+                          
+                          Title = "The Virgin Way",
+                          AuthorFirst = "Richard",
+                          AuthorLast = "Branson",
+                          Publisher = "Portfolio",
+                          ISBN = "978-1591847984",
+                          Category = "Non-Fiction",
+                          Classification = "Business",
+                          Price = 29.16,
+                          Pages = 400
+                      },
+
+                       new Books
+                       {
+                           
+                           Title = "It's Your Ship",
+                           AuthorFirst = "Micheal",
+                           AuthorLast = "Abrashoff",
+                           Publisher = "Grand Central Publishing",
+                           ISBN = "978-1455523023",
+                           Category = "Non-Fiction",
+                           Classification = "Self_Help",
+                           Price = 21.66,
+                           Pages = 240
+                         
+                       },
 
 
+                        new Books
+                        {
+                            
+                            Title = "Deep Work",
+                            AuthorFirst = "Cal",
+                            AuthorLast = "Newport",
+                            Publisher = "Grand Central Publishing",
+                            ISBN = "978-1455586691",
+                            Category = "Non-Fiction",
+                            Classification = "Self-Help",
+                            Price = 14.99,
+                            Pages = 304
+                        },
+
+                        //three new books entered into the seed data
+
+                        new Books
+                        {
+
+                            Title = "Harry Potter 3",
+                            AuthorFirst = "JK",
+                            AuthorLast = "Rowling",
+                            Publisher = "Bloomsbury",
+                            ISBN = "747-5421556691",
+                            Category = "Fiction",
+                            Classification = "Fantasy",
+                            Price = 6.99,
+                            Pages = 464
+                        },
+
+                        new Books
+                        {
+
+                            Title = "Holes",
+                            AuthorFirst = "Louis",
+                            AuthorLast = "Sachar",
+                            Publisher = "Farrar",
+                            ISBN = "978-0786221868",
+                            Category = "Fiction",
+                            Classification = "Adventure",
+                            Price = 3.99,
+                            Pages = 272
+                        },
+
+                        new Books
+                        {
+
+                            Title = "Harry Potter 5",
+                            AuthorFirst = "JK",
+                            AuthorLast = "Rowling",
+                            Publisher = "Bloomsbury",
+                            ISBN = "978-1455586691",
+                            Category = "Fiction",
+                            Classification = "Fantasy",
+                            Price = 6.99,
+                            Pages = 766
+                        }
                     );
 
                 context.SaveChanges();

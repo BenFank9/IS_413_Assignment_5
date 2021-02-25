@@ -42,5 +42,8 @@ namespace IS_413_Assignment_5.Models
         [Required]
         [DataType(DataType.Currency)]
         public double Price { get; set; }
+
+        [Required]
+        public int Pages { get; set; }
     }
 }

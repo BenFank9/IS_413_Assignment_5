@@ -59,8 +59,15 @@ namespace IS_413_Assignment_5
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                    "pagination",
+                    "Books/P{page}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapDefaultControllerRoute();
+
+                    /* name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}")*/
             });
 
             SeedData.EnsurePopulated(app);
