@@ -1,0 +1,56 @@
+﻿@*This is a partial view for things you want to print out in a different way or only on a few pages*@
+
+@model Books
+
+
+<tr>
+    <td>@Model.Title</td>
+    <td>@Model.AuthorFirst</td>
+    <td>@Model.AuthorLast</td>
+    <td>@Model.Publisher</td>
+    <td>@Model.ISBN</td>
+    <td>@Model.Category</td>
+    <td>@Model.Classification</td>
+    <td><a>$</a>@Model.Price</td>
+    <td>@Model.Pages</td>
+</tr>
+
+
+
+
+
+@*when transferring to a partial view make sure you only transfer the stuff thats needed*@
+
+<!--<div class="container">
+    <table class=" table table-striped table-dark">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author First</th>
+                <th>Author Last</th>
+                <th>Publisher</th>
+                <th>ISBN</th>
+                <th>Category</th>
+                <th>Classification</th>
+                <th>Price</th>
+                <th>Pages</th>
+
+            </tr>
+        </thead>-->
+@*Use razor code to make bring in the new movies from the model.
+    Also use a foreach to loop through all of the restaurants in the list and print them in a table*@
+        <!--<tbody>
+            <tr>
+                <td>@Model.Title</td>
+                <td>@Model.AuthorFirst</td>
+                <td>@Model.AuthorLast</td>
+                <td>@Model.Publisher</td>
+                <td>@Model.ISBN</td>
+                <td>@Model.Category</td>
+                <td>@Model.Classification</td>
+                <td><a>$</a>@Model.Price</td>
+                <td>@Model.Pages</td>
+            </tr>
+        </tbody>
+    </table>
+</div>-->

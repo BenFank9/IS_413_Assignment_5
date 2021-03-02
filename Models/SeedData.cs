@@ -32,8 +32,8 @@ namespace IS_413_Assignment_5.Models
                         AuthorLast = "Hugo",
                         Publisher = "Signet",
                         ISBN = "978-0451419439",
-                        Category = "Fiction",
-                        Classification = "Classic",
+                        Classification = "Fiction",
+                        Category = "Classic",
                         Price = 9.95,
                         Pages = 1488
                     },
@@ -46,8 +46,8 @@ namespace IS_413_Assignment_5.Models
                          AuthorLast = "Goodwin",
                          Publisher = "Simon & Schuster",
                          ISBN = "978-0743270755",
-                         Category = "Non-Fiction",
-                         Classification = "Biography",
+                         Classification = "Non-Fiction",
+                         Category = "Biography",
                          Price = 14.58,
                          Pages = 944
                      },
@@ -60,8 +60,8 @@ namespace IS_413_Assignment_5.Models
                          AuthorLast = "Grisham",
                          Publisher = "Bantam",
                          ISBN = "978-0553393613",
-                         Category = "Fiction",
-                         Classification = "Thrillers",
+                         Classification = "Fiction",
+                         Category = "Thrillers",
                          Price = 15.03,
                          Pages = 642
 
@@ -75,8 +75,8 @@ namespace IS_413_Assignment_5.Models
                          AuthorLast = "Hillenbrand",
                          Publisher = "Random House",
                          ISBN = "978-0812974492",
-                         Category = "Non-Fiction",
-                         Classification = "Historical",
+                         Classification = "Non-Fiction",
+                         Category = "Historical",
                          Price = 13.33,
                          Pages = 528
                      },
@@ -90,8 +90,8 @@ namespace IS_413_Assignment_5.Models
                           AuthorLast = "Branson",
                           Publisher = "Portfolio",
                           ISBN = "978-1591847984",
-                          Category = "Non-Fiction",
-                          Classification = "Business",
+                          Classification = "Non-Fiction",
+                          Category = "Business",
                           Price = 29.16,
                           Pages = 400
                       },
@@ -104,8 +104,8 @@ namespace IS_413_Assignment_5.Models
                            AuthorLast = "Abrashoff",
                            Publisher = "Grand Central Publishing",
                            ISBN = "978-1455523023",
-                           Category = "Non-Fiction",
-                           Classification = "Self_Help",
+                           Classification = "Non-Fiction",
+                           Category = "Self-Help",
                            Price = 21.66,
                            Pages = 240
                          
@@ -120,8 +120,8 @@ namespace IS_413_Assignment_5.Models
                             AuthorLast = "Newport",
                             Publisher = "Grand Central Publishing",
                             ISBN = "978-1455586691",
-                            Category = "Non-Fiction",
-                            Classification = "Self-Help",
+                            Classification = "Non-Fiction",
+                            Category = "Self-Help",
                             Price = 14.99,
                             Pages = 304
                         },
@@ -136,8 +136,8 @@ namespace IS_413_Assignment_5.Models
                             AuthorLast = "Rowling",
                             Publisher = "Bloomsbury",
                             ISBN = "747-5421556691",
-                            Category = "Fiction",
-                            Classification = "Fantasy",
+                            Classification = "Fiction",
+                            Category = "Fantasy",
                             Price = 6.99,
                             Pages = 464
                         },
@@ -150,8 +150,8 @@ namespace IS_413_Assignment_5.Models
                             AuthorLast = "Sachar",
                             Publisher = "Farrar",
                             ISBN = "978-0786221868",
-                            Category = "Fiction",
-                            Classification = "Adventure",
+                            Classification = "Fiction",
+                            Category = "Adventure",
                             Price = 3.99,
                             Pages = 272
                         },
@@ -164,8 +164,8 @@ namespace IS_413_Assignment_5.Models
                             AuthorLast = "Rowling",
                             Publisher = "Bloomsbury",
                             ISBN = "978-1455586691",
-                            Category = "Fiction",
-                            Classification = "Fantasy",
+                            Classification = "Fiction",
+                            Category = "Fantasy",
                             Price = 6.99,
                             Pages = 766
                         }

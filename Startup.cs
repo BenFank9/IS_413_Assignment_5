@@ -30,7 +30,7 @@ namespace IS_413_Assignment_5
             //passing in the configuration for accessing the database
             services.AddDbContext<BookstoreDbContext>(options=>
            {
-               options.UseSqlServer(Configuration["ConnectionStrings:BookstoreConnection"]);
+               options.UseSqlite(Configuration["ConnectionStrings:BookstoreConnection"]);
            });
 
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
@@ -58,11 +58,23 @@ namespace IS_413_Assignment_5
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
+                endpoints.MapControllerRoute("categorypage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" });
 
-                    "pagination",
+                endpoints.MapControllerRoute("page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("category",
+                   "{category}",
+                   new { Controller = "Home", action = "Index", page = 1 });
+
+                endpoints.MapControllerRoute("pagination",
                     "Books/P{page}",
                     new { Controller = "Home", action = "Index" });
+
+
 
                 endpoints.MapDefaultControllerRoute();
 

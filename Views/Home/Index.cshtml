@@ -25,21 +25,11 @@
         </thead>
 
         @*Use razor code to make bring in the new movies from the model.
-            Also use a foreach to loop through all of the restaurants in the list and print them in a table*@
+            Also use a foreach to loop through all of the restaurants in the list and print them in a table using a partial view*@
         <tbody>
             @foreach ( var r in Model.Books)
             {
-            <tr>
-                <td>@r.Title</td>
-                <td>@r.AuthorFirst</td>
-                <td>@r.AuthorLast</td>
-                <td>@r.Publisher</td>
-                <td>@r.ISBN</td>
-                <td>@r.Category</td>
-                <td>@r.Classification</td>
-                <td><a>$</a>@r.Price</td>
-                <td>@r.Pages</td>
-            </tr>
+                <partial name="BookSummary" model="r" />
             }
         </tbody>
     </table>
@@ -47,7 +37,7 @@
 <br />
 @*have to pass in the paging info model*@
 
-<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-info" class="brn-group pull-right m-1"></div>
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-info" page-url-category="@Model.CurrentCategory" class="brn-group pull-right m-1"></div>
 
 <br />
 <div class="container">
