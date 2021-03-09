@@ -11,16 +11,21 @@ using System.Threading.Tasks;
 
 namespace IS_413_Assignment_5.Infrastructure
 {
+    //this effects the dive element and is called page-model
+
     [HtmlTargetElement("div", Attributes = "page-model")]
     public class PageLinkTagHelper : TagHelper
     {
-
+        //factory for creating ihelper instances
         private IUrlHelperFactory urlHelperFactory;
 
+        //constructor
         public PageLinkTagHelper (IUrlHelperFactory hf)
         {
             urlHelperFactory = hf; 
         }
+
+        //creating property and giving them attributes!
 
         [ViewContext]
         [HtmlAttributeNotBound]
@@ -36,11 +41,13 @@ namespace IS_413_Assignment_5.Infrastructure
         //override Taghelper method
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            //this helps build a contract for IUrlHelper
+            //this helps build a contract for IUrlHelper. Contract = this is how our classes with communicate with each other.
 
             IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
 
             TagBuilder result = new TagBuilder("div");
+
+            //loop through the total pages and make the dynamic navigation!
 
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
