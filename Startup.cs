@@ -37,6 +37,10 @@ namespace IS_413_Assignment_5
 
             //add the services for razor pages
             services.AddRazorPages();
+
+            //add the service for caching the items in the card
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +58,8 @@ namespace IS_413_Assignment_5
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseRouting();
 
@@ -79,12 +85,12 @@ namespace IS_413_Assignment_5
                     "Books/P{page}",
                     new { Controller = "Home", action = "Index" });
 
-
+                //add another endpoiont for razor pages
+                endpoints.MapRazorPages();
 
                 endpoints.MapDefaultControllerRoute();
 
-                //add another endpoiont for razor pages
-                endpoints.MapRazorPages();
+                
 
                     /* name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}")*/
