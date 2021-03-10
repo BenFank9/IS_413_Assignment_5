@@ -69,7 +69,7 @@ namespace IS_413_Assignment_5
             app.UseEndpoints(endpoints =>
             {
                 //user can type in the destination but also is generating outgoing urls we can use for ourselves! consistency on the ways to get to the right place. Order Matters!
-
+              
                 endpoints.MapControllerRoute("categorypage",
                     "{category}/{page:int}",
                     new { Controller = "Home", action = "Index" });
@@ -86,15 +86,17 @@ namespace IS_413_Assignment_5
                     "Books/P{page}",
                     new { Controller = "Home", action = "Index" });
 
-                //add another endpoiont for razor pages
-                endpoints.MapRazorPages();
 
                 endpoints.MapDefaultControllerRoute();
 
-                
 
-                    /* name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}")*/
+                //add another endpoiont for razor pages
+                endpoints.MapRazorPages();
+
+
+
+                /* name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}")*/
             });
 
             SeedData.EnsurePopulated(app);
