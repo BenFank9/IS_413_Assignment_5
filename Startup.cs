@@ -34,6 +34,9 @@ namespace IS_413_Assignment_5
            });
 
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+
+            //add the services for razor pages
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,6 +82,9 @@ namespace IS_413_Assignment_5
 
 
                 endpoints.MapDefaultControllerRoute();
+
+                //add another endpoiont for razor pages
+                endpoints.MapRazorPages();
 
                     /* name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}")*/
