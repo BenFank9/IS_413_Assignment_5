@@ -58,6 +58,8 @@ namespace IS_413_Assignment_5
 
             app.UseEndpoints(endpoints =>
             {
+                //user can type in the destination but also is generating outgoing urls we can use for ourselves! consistency on the ways to get to the right place. Order Matters!
+
                 endpoints.MapControllerRoute("categorypage",
                     "{category}/{page:int}",
                     new { Controller = "Home", action = "Index" });

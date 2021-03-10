@@ -17,8 +17,10 @@ namespace IS_413_Assignment_5.Components
         }
         public IViewComponentResult Invoke()
         {
+            //this is to make selected highlighting
             ViewBag.SelectedCategory = RouteData?.Values["category"];
 
+            //this view is looking for a Default.cshtml in shared folder, components folder, NavigationMenue folder
             //dropping a partial view into the view at that spot where the viewComponent is going in.
             return View(repository.Books
                 .Select(x => x.Category)

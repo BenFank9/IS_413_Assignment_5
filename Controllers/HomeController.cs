@@ -31,6 +31,7 @@ namespace IS_413_Assignment_5.Controllers
 
             return View(new ProjectListViewModel
             {
+                //add filtering
                 Books = _bookstoreRepository.Books
                   .Where(p => category == null || p.Category == category)
                   .OrderBy(p => p.BookId)
