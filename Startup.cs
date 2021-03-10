@@ -57,6 +57,7 @@ namespace IS_413_Assignment_5
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseSession();
