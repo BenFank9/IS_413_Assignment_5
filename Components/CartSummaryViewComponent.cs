@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace IS_413_Assignment_5.Components
 {
+    //To make the cart summary component
     public class CartSummaryViewComponent : ViewComponent
     {
         private Cart cart;

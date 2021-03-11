@@ -14,6 +14,9 @@
             @Model.ComputeTotalSum().ToString("c")
         </small>
     }
+    
+    @*make sure this displays the cart page which is in my case, the Buy page!*@
+
     <a class="btn btn-sm btn-secondary navbar-btn" asp-page="/Buy"
        asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
         <i class="fa fa-shopping-cart"></i>

@@ -21,6 +21,8 @@ namespace IS_413_Assignment_5.Models
             return cart;
         }
 
+        //these methods overrride the methods that are standard with carts.
+
         [JsonIgnore]
         public ISession Session { get; set; }
         public override void AddItem(Books books, int quantity)

@@ -76,6 +76,9 @@ namespace IS_413_Assignment_5
                 //user can type in the destination but also is generating outgoing urls we can use for ourselves! consistency on the ways to get to the right place. Order Matters!
               
                 
+                endpoints.MapControllerRoute("categorypage",
+                    "{category}/{pagenum:int}",
+                    new { Controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("pagenum",
                     "{pagenum:int}",
@@ -85,9 +88,6 @@ namespace IS_413_Assignment_5
                    "{category}",
                    new { Controller = "Home", action = "Index", pagenum = 1 });
 
-                endpoints.MapControllerRoute("categorypage",
-                    "{category}/{pagenum:int}",
-                    new { Controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("pagination",
                     "Books/P{pagenum}",
