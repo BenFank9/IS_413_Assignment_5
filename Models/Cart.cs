@@ -11,17 +11,17 @@ namespace IS_413_Assignment_5.Models
 
         //when they go to add an item were going to pass in the object and quantity.
         //go into the lines object and select where the Books is == the Books passed in.
-        public void AddItem(Books bok, int qty)
+        public virtual void AddItem(Books books, int qty)
         {
             CartLine line = Lines
-                .Where(b => b.Books.BookId == bok.BookId)
+                .Where(b => b.Books.BookId == books.BookId)
                 .FirstOrDefault();
 
             if (line == null)
             {
                 Lines.Add(new CartLine
                 {
-                    Books = bok,
+                    Books = books,
                     Quantity = qty
                 });
             }
@@ -32,22 +32,24 @@ namespace IS_413_Assignment_5.Models
         }
 
         //remove a line or an item in the cart
-        public void RemoveLine(Books bok) =>
-            Lines.RemoveAll(x => x.Books.BookId == bok.BookId);
-
-        //clear everything in the cart
-        public void Clear() => Lines.Clear();
+        public virtual void RemoveLine(Books books) =>
+            Lines.RemoveAll(x => x.Books.BookId == books.BookId);
 
         //get a total price
-        public decimal ComputeTotalSum() => (decimal)Lines.Sum(e => e.Books.Price * e.Quantity);
-    
+        public decimal ComputeTotalSum() => 
+            (decimal)Lines.Sum(e => e.Books.Price * e.Quantity);
 
-        public class CartLine
-        {
-            public int CartLineID { get; set; }
-            public Books Books { get; set; }
-            public int Quantity { get; set; }
+        //clear everything in the cart
+        public virtual void Clear() => Lines.Clear();
 
-        }
     }
+
+    public class CartLine
+    {
+        public int CartLineID { get; set; }
+        public Books Books { get; set; }
+        public int Quantity { get; set; }
+
+    }
+    
 }

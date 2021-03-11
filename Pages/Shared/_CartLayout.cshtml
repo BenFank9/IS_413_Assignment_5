@@ -6,12 +6,13 @@
     <title>@ViewData["Title"] - IS_413_Assignment_6</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand font-italic font-weight-bolder" href="@Model.ReturnUrl">IS_413_Assignment_6</a>
+                <a class="navbar-brand font-italic font-weight-bolder" href="@Model.ReturnUrl">IS_413_Assignment_8</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,6 +21,10 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark font-italic font-weight-bold" href="@Model.ReturnUrl">Continue Shopping</a>
+                        </li>
+                        <li class="col-8 text-right">
+                            <vc:cart-summary  href="@Model.ReturnUrl"/>
+                            
                         </li>
 
                     </ul>
@@ -41,7 +46,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="containers">
-            &copy; 2021 - IS_413_Assignment_6 - <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            &copy; 2021 - IS_413_Assignment_8 - <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

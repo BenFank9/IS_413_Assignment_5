@@ -50,7 +50,7 @@ namespace IS_413_Assignment_5.Infrastructure
             {
                 TagBuilder tag = new TagBuilder("a");
 
-                PageUrlValues["page"] = i;
+                PageUrlValues["pagenum"] = i;
                 tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
 
                 if (PageClassesEnabled)

@@ -24,7 +24,7 @@ namespace IS_413_Assignment_5.Controllers
         }
 
         //default page 1
-        public IActionResult Index(string category, int page = 1)
+        public IActionResult Index(string category, int pagenum = 1)
         {
             //this is saying order by the book id. bring back 0-4 and on the 5th element in the array go to a new page. show 5 items per page. this also allows for filtering using categroy.
             //this is a query in linq!
@@ -35,11 +35,11 @@ namespace IS_413_Assignment_5.Controllers
                 Books = _bookstoreRepository.Books
                   .Where(p => category == null || p.Category == category)
                   .OrderBy(p => p.BookId)
-                  .Skip((page - 1) * PageSize)
+                  .Skip((pagenum - 1) * PageSize)
                   .Take(PageSize),
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
+                    CurrentPage = pagenum,
                     ItemsPerPage = PageSize,
                     TotalNumItems = category == null ? _bookstoreRepository.Books.Count() :
                         _bookstoreRepository.Books.Where(x => x.Category == category).Count()

@@ -1,6 +1,7 @@
 using IS_413_Assignment_5.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -41,6 +42,10 @@ namespace IS_413_Assignment_5
             //add the service for caching the items in the card
             services.AddDistributedMemoryCache();
             services.AddSession();
+
+            //for the cart
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,20 +75,22 @@ namespace IS_413_Assignment_5
             {
                 //user can type in the destination but also is generating outgoing urls we can use for ourselves! consistency on the ways to get to the right place. Order Matters!
               
-                endpoints.MapControllerRoute("categorypage",
-                    "{category}/{page:int}",
-                    new { Controller = "Home", action = "Index" });
+                
 
-                endpoints.MapControllerRoute("page",
-                    "{page:int}",
+                endpoints.MapControllerRoute("pagenum",
+                    "{pagenum:int}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("category",
                    "{category}",
-                   new { Controller = "Home", action = "Index", page = 1 });
+                   new { Controller = "Home", action = "Index", pagenum = 1 });
+
+                endpoints.MapControllerRoute("categorypage",
+                    "{category}/{pagenum:int}",
+                    new { Controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("pagination",
-                    "Books/P{page}",
+                    "Books/P{pagenum}",
                     new { Controller = "Home", action = "Index" });
 
 
